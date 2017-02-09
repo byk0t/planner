@@ -4,8 +4,10 @@
   "description": "Test NodeJS and ReactJS project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-server": "nodemon server/app.js --exec  babel-node --presets es2015,stage-2"
+    "test": "mocha --compilers js:babel-register",
+    "dev-server": "nodemon server/app.js --exec  babel-node",
+    "build": "babel server -d dist",
+    "server": "node dist/app.js"
   },
   "author": "byk0t",
   "license": "ISC",
@@ -13,6 +15,8 @@
     "babel-cli": "^6.22.2",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
