@@ -1,20 +1,23 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import * as db from './utils/db';
 
 const app = express();
 
-app.get('/', (req, res)=> {
-  res.send('Hello World, Bro!')
+db.connect();
+
+app.use( bodyParser.json() );
+
+app.get('/tasks', (req, res)=> {
+	db.getTasks().then(data => res.send(data));
 });
 
-app.get('/test', (req, res)=> {
-  res.send('Hello World, This is a test!')
+app.post('/tasks', (req, res)=> {
+  	db.createTask(req.body).then(data => res.send(data));
 });
 
-app.get('/testdb', (req, res)=> {
-	db.connect();
-	const task = db.createTask( {title:'Work', text:'Do your work'});
-	res.send("Created task " + task.title);
+app.delete('/tasks/:id', (req, res) => {
+    db.deleteTask(req.params.id).then(data => res.send(data));
 });
 
 const server = app.listen(8080, ()=> {
