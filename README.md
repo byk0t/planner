@@ -7,3 +7,12 @@
    npm install --save-dev babel-preset-es2015 babel-preset-stage-2
    npm install express --save
    npm install --save-dev nodemon
+
+6. npm install --save-dev mocha
+   mkdir test && touch test/app.js
+
+7. npm install -S body-parser
+   sudo npm install webpack -g
+   npm install react react-dom --save-dev
+   npm install babel-preset-react --save-dev
+   npm install babel-core babel-loader webpack --save-dev
