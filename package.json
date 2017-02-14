@@ -8,7 +8,8 @@
     "dev-server": "nodemon server/app.js --exec  babel-node",
     "build": "babel server -d dist",
     "server": "node dist/app.js",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-dev": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0"
   },
   "author": "byk0t",
   "license": "ISC",
@@ -23,7 +24,8 @@
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "body-parser": "^1.16.1",
