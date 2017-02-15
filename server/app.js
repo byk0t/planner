@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import * as db from './utils/db';
 
 const app = express();
@@ -7,6 +8,9 @@ const app = express();
 db.connect();
 
 app.use( bodyParser.json() );
+
+// Allow requests from any origin
+app.use(cors({ origin: '*' }));
 
 app.get('/tasks', (req, res)=> {
 	db.getTasks().then(data => res.send(data));
