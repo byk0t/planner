@@ -16,4 +16,8 @@
    npm install react react-dom --save-dev **
    npm install babel-preset-react --save-dev **
    npm install babel-core babel-loader webpack --save-dev **
-8. mkdir client/{stores,dispatcher,actions,api,components,constants} **
+8. mkdir client/{stores,dispatcher,actions,api,components,constants}**
+   npm install -S keymirror**
+   npm install -S flux
+
+9. npm install less-loader --save-dev
