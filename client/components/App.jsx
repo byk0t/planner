@@ -8,6 +8,7 @@ import TasksActions from '../actions/TasksActions';
 import './App.less';
 import TaskList from './TaskList.jsx';
 
+import { Link } from 'react-router';
 
 function getStateFromFlux() {
     return {
@@ -28,7 +29,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1>Tasks:</h1>
-                <a href="">Add new task</a>
+                <Link to="/about">Add New</Link>
                 <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
             </div>
         );

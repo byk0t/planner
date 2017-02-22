@@ -20,4 +20,5 @@
    npm install -S keymirror  
    npm install -S flux  
 
-9. npm install style-loader css-loader less-loader less --save-dev  
+9. npm install style-loader css-loader less-loader less --save-dev
+10.npm install --save react-router
