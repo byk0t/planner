@@ -6,6 +6,7 @@ import TasksStore from '../stores/TasksStore';
 import TasksActions from '../actions/TasksActions';
 
 import './App.less';
+import TaskList from './TaskList.jsx';
 
 
 function getStateFromFlux() {
@@ -48,18 +49,5 @@ class App extends React.Component {
         this.setState(getStateFromFlux());        
     }
 };
-
-class TaskList extends React.Component {
-
-  render() {
-    return (
-      <ul>
-        {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
-    );
-  }
-}
 
 export default App;
