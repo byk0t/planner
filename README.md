@@ -20,4 +20,4 @@
    npm install -S keymirror**
    npm install -S flux
 
-9. npm install less-loader --save-dev
+9. npm install style-loader css-loader less-loader less --save-dev
