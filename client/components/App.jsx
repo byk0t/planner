@@ -28,9 +28,14 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1>Tasks:</h1>
-                <TaskList items={this.state.tasks}/>
+                <a href="">Add new task</a>
+                <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
             </div>
         );
+    }
+
+    handleTaskDelete(task) {
+        TasksActions.deleteTask(task.id);
     }
 
     componentWillMount() {
