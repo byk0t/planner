@@ -28,8 +28,8 @@ class App extends React.Component {
     render() {    	
         return (
             <div className="App">
-                <h1>Tasks:</h1>
-                <Link to="/about">Add New</Link>
+                <h1>Tasks:</h1>      
+                <Link to="/new-task">Create New</Link>          
                 <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
             </div>
         );

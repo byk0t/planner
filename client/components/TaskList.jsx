@@ -9,7 +9,8 @@ class TaskList extends React.Component {
       <ul>
         {this.props.items.map(item => (          
           <Task 
-          	key={item.id} 
+          	key={item.id}
+            id={item.id} 
           	text={item.text} 
           	title={item.title}
           	onDelete={()=> this.props.onTaskDelete(item)}
