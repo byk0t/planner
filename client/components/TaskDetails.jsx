@@ -26,6 +26,12 @@ class TaskDetails extends React.Component {
         TasksStore.removeChangeListener(this._onChange);
     }
 
+    componentWillReceiveProps(nextProps) {       
+        if(this.props.params.id != nextProps.params.id) {
+            TasksActions.loadTask(nextProps.params.id);
+        }
+    }
+
     _onChange() {        
         this.setState({task:TasksStore.getTask()});
     }

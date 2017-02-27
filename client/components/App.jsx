@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Grid, Row, Col} from 'react-bootstrap';
+
 import api from '../api';
 import TasksStore from '../stores/TasksStore';
 import TasksActions from '../actions/TasksActions';
@@ -23,15 +26,25 @@ class App extends React.Component {
 	    super(props);	    
         this.state = getStateFromFlux();
         this._onChange = this._onChange.bind(this);        
-  	}
+  	}      
 
     render() {    	
         return (
-            <div className="App">
-                <h1>Tasks:</h1>      
-                <Link to="/new-task">Create New</Link>          
-                <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
-            </div>
+            
+            <Grid>
+                <Row>
+                    <Col xs={12} md={3}>
+                        <div className="App">
+                            <h1>Tasks:</h1>      
+                            <Link to="/new-task">Create New</Link>          
+                            <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={9}>
+                        {this.props.children}
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 
