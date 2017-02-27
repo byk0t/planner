@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 import api from '../api';
 import TasksStore from '../stores/TasksStore';
@@ -30,21 +30,39 @@ class App extends React.Component {
 
     render() {    	
         return (
-            
-            <Grid>
-                <Row>
-                    <Col xs={12} md={3}>
-                        <div className="App">
-                            <h1>Tasks:</h1>      
-                            <Link to="/new-task">Create New</Link>          
-                            <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
-                        </div>
-                    </Col>
-                    <Col xs={12} md={9}>
-                        {this.props.children}
-                    </Col>
-                </Row>
-            </Grid>
+            <div>
+                <Navbar>
+                    <Navbar.Header>
+                      <Navbar.Brand>
+                        <a href="#">Planner</a>
+                      </Navbar.Brand>
+                    </Navbar.Header>
+                    <Nav>
+                      <NavItem eventKey={1} href="#">About</NavItem>                      
+                      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                        <MenuItem eventKey={3.1}>Action</MenuItem>
+                        <MenuItem eventKey={3.2}>Another action</MenuItem>
+                        <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                        <MenuItem divider />
+                        <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                      </NavDropdown>
+                    </Nav>
+                  </Navbar>
+                <Grid>
+                    <Row>
+                        <Col xs={12} md={3}>
+                            <div className="App">
+                                <h1>Tasks:</h1>      
+                                <Link to="/new-task">Create New</Link>          
+                                <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
+                            </div>
+                        </Col>
+                        <Col xs={12} md={9}>
+                            {this.props.children}
+                        </Col>
+                    </Row>
+                </Grid>
+            </div>
         );
     }
 
