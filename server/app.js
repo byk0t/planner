@@ -16,6 +16,10 @@ app.get('/tasks', (req, res)=> {
 	db.getTasks().then(data => res.send(data));
 });
 
+app.get('/tasks/:id', (req, res)=> {
+	db.getTaskById(req.params.id).then(data => res.send(data));
+});
+
 app.post('/tasks', (req, res)=> {
   	db.createTask(req.body).then(data => res.send(data));
 });

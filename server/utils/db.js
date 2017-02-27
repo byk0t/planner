@@ -12,6 +12,10 @@ export function getTasks() {
 	return Task.find();
 }
 
+export function getTaskById(id) {
+	return Task.findById(id);
+}
+
 export function deleteTask(id) {
     return Task.findById(id).remove();
 }

@@ -22,7 +22,7 @@ class App extends React.Component {
 	constructor(props) {
 	    super(props);	    
         this.state = getStateFromFlux();
-        this._onChange = this._onChange.bind(this);
+        this._onChange = this._onChange.bind(this);        
   	}
 
     render() {    	

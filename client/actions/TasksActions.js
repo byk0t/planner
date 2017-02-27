@@ -4,6 +4,22 @@ import Constants from '../constants/AppConstants';
 import api from '../api';
 
 const TaskActions = {
+
+    loadTask(id) {
+        AppDispatcher.dispatch({
+            type: Constants.LOAD_TASK_REQUEST,
+            id:id
+        });
+        api.loadTask(id)
+        .then(({data})=>
+            AppDispatcher.dispatch({
+                type: Constants.LOAD_TASK_SUCCESS,
+                task: data
+            })
+        )
+        .catch();
+    },
+
     loadTasks() {
         AppDispatcher.dispatch({
             type: Constants.LOAD_TASKS_REQUEST
