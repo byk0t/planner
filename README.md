@@ -22,3 +22,6 @@
 
 9. npm install style-loader css-loader less-loader less --save-dev
 10.npm install --save react-router
+11.npm install bootstrap react-bootstrap --save  
+   npm install --save-dev url-loader  
+   npm install --save-dev file-loader
