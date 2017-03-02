@@ -52,8 +52,12 @@ const TaskActions = {
 
     deleteTask(taskId) {
         api.deleteTask(taskId)
-        .then(() =>
-            this.loadTasks()
+        .then(() => {
+                this.loadTasks();
+                AppDispatcher.dispatch({
+                    type: Constants.DELETE_TASK_SUCCESS                   
+                })
+            }
         )
         .catch(err =>
             console.error(err)

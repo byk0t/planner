@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory , Link } from 'react-router';
+import {Button} from 'react-bootstrap';
 
 import TasksActions from '../actions/TasksActions';
 import TasksStore from '../stores/TasksStore';
@@ -12,6 +13,12 @@ class TaskDetails extends React.Component {
             task:{}
         }
         this._onChange = this._onChange.bind(this);
+        this.handleTaskDelete = this.handleTaskDelete.bind(this);
+    }
+
+    handleTaskDelete() {        
+        TasksActions.deleteTask(this.state.task.id);
+        this.props.router.push('/');                
     }
 
     componentWillMount() {
@@ -42,7 +49,8 @@ class TaskDetails extends React.Component {
               <h1>{this.state.task.id}</h1>	 
               <div>
                   {this.state.task.title} <br/>
-                  {this.state.task.text}
+                  {this.state.task.text} <br/>
+                  <Button bsStyle="danger" onClick={ this.handleTaskDelete}>Delete</Button>
               </div>     	
           </div>
         );

@@ -87,6 +87,12 @@ AppDispatcher.register(function(action) {
             break;    
         }
 
+        case AppConstants.DELETE_TASK_SUCCESS: {
+            _task = {};
+            TasksStore.emitChange();
+            break;        
+        }
+
         default: {
             console.log('No such handler');
         }

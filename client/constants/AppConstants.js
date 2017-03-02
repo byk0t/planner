@@ -6,5 +6,6 @@ export default keyMirror({
 	LOAD_TASK_FAIL: null,
     LOAD_TASKS_REQUEST: null,
     LOAD_TASKS_SUCCESS: null,
-    LOAD_TASKS_FAIL: null
+    LOAD_TASKS_FAIL: null,
+    DELETE_TASK_SUCCESS: null
 });

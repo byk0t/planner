@@ -1,5 +1,4 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 import TasksActions from '../actions/TasksActions';
 
 class CreateTaskForm extends React.Component {
@@ -9,13 +8,13 @@ class CreateTaskForm extends React.Component {
   	this.state = {title:'', text:''};
   	this.handleTaskCreate = this.handleTaskCreate.bind(this);	
   	this.handleTitleChange = this.handleTitleChange.bind(this);
-  	this.handleTextChange = this.handleTextChange.bind(this);
+  	this.handleTextChange = this.handleTextChange.bind(this);    
   }
 
   handleTaskCreate(e) {
   	e.preventDefault();
-  	TasksActions.createTask(this.state);
-  	hashHistory.push('/');
+  	TasksActions.createTask(this.state);  	
+    this.props.router.push('/');
   }
 
   handleTitleChange(e) {

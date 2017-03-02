@@ -25,7 +25,8 @@ class App extends React.Component {
 	constructor(props) {
 	    super(props);	    
         this.state = getStateFromFlux();
-        this._onChange = this._onChange.bind(this);        
+        this._onChange = this._onChange.bind(this);
+        this.handleNewTaskRedirect = this.handleNewTaskRedirect.bind(this);
   	}      
 
     render() {    	
@@ -40,7 +41,7 @@ class App extends React.Component {
                     <Nav>
                       <NavItem eventKey={1} href="#">About</NavItem>                      
                       <NavDropdown eventKey={2} title="Actions" id="basic-nav-dropdown">
-                        <MenuItem eventKey={2.1}>New Task</MenuItem>                        
+                        <MenuItem eventKey={2.1} onSelect={this.handleNewTaskRedirect}>New Task</MenuItem>                        
                         <MenuItem divider />
                         <MenuItem eventKey={2.2}>Separated link</MenuItem>
                       </NavDropdown>
@@ -50,9 +51,8 @@ class App extends React.Component {
                     <Row>
                         <Col xs={12} md={3}>
                             <div className="App">
-                                <h1>Tasks:</h1>      
-                                <Link to="/new-task">Create New</Link>          
-                                <TaskList items={this.state.tasks} onTaskDelete={this.handleTaskDelete}/>
+                                <h1>Tasks:</h1>                                               
+                                <TaskList items={this.state.tasks}/>
                             </div>
                         </Col>
                         <Col xs={12} md={9}>
@@ -64,10 +64,10 @@ class App extends React.Component {
         );
     }
 
-    handleTaskDelete(task) {
-        TasksActions.deleteTask(task.id);
+    handleNewTaskRedirect() {
+        this.props.router.push('new-task');
     }
-
+    
     componentWillMount() {
         TasksActions.loadTasks();    
     }
