@@ -50,8 +50,7 @@ class App extends React.Component {
                 <Grid>
                     <Row>
                         <Col xs={12} md={3}>
-                            <div className="App">
-                                <h1>Tasks:</h1>                                               
+                            <div className="App">                               
                                 <TaskList items={this.state.tasks}/>
                             </div>
                         </Col>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {FormGroup, FormControl, ControlLabel, Button, Alert} from 'react-bootstrap';
 import TasksActions from '../actions/TasksActions';
 
 class CreateTaskForm extends React.Component {
@@ -27,12 +28,33 @@ class CreateTaskForm extends React.Component {
 
   render() {
     return (      
-    	<div>
-      		<h1>Create New Task</h1>      
+    	<div>      		
+          <Alert bsStyle="info">
+            <strong>Create new task</strong>
+          </Alert>    
 	      	<form method="post" action="">
-	      		Title: <input type="text" name="title" value={this.state.title} onChange={this.handleTitleChange} /> <br/>
-	      		Text: <textarea name="text" value={this.state.text} onChange={this.handleTextChange}></textarea> <br/>
-	      		<button onClick={this.handleTaskCreate}>Create</button>
+            <FormGroup
+              controlId="taskTitle">
+              <ControlLabel>Title:</ControlLabel>
+              <FormControl
+                type="text"
+                value={this.state.title}
+                placeholder="Enter text"
+                onChange={this.handleTitleChange}
+              />
+            </FormGroup>
+            <FormGroup
+              controlId="taskText">
+              <ControlLabel>Text:</ControlLabel>
+              <FormControl
+                type="text"
+                componentClass="textarea"
+                value={this.state.text}
+                placeholder="Enter text"
+                onChange={this.handleTextChange}
+              />
+            </FormGroup>	      
+	      		<Button bsStyle="success" onClick={this.handleTaskCreate}>Create</Button>
 	      	</form>
       	</div>
     );

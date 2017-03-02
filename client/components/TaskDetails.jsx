@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory , Link } from 'react-router';
-import {Button} from 'react-bootstrap';
+import {Button, Jumbotron} from 'react-bootstrap';
 
 import TasksActions from '../actions/TasksActions';
 import TasksStore from '../stores/TasksStore';
@@ -44,14 +44,18 @@ class TaskDetails extends React.Component {
     }
 
     render() {
-        return (      
-        	<div>          		
-              <h1>{this.state.task.id}</h1>	 
-              <div>
-                  {this.state.task.title} <br/>
-                  {this.state.task.text} <br/>
-                  <Button bsStyle="danger" onClick={ this.handleTaskDelete}>Delete</Button>
-              </div>     	
+        return (
+            <div>                
+              <Jumbotron>      
+            	 
+                      <h1>{this.state.task.title}</h1>	 
+                      <div>
+                           <br/>
+                          {this.state.task.text}                      
+                      </div>     	
+                  
+              </Jumbotron>
+              <Button bsStyle="danger" onClick={ this.handleTaskDelete}>Delete</Button>
           </div>
         );
     }
