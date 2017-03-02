@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {Button} from 'react-bootstrap';
 import './Task.less';
+
 
 class Task extends React.Component {
 
   render() {
     return (      
-      <li>
-      	{this.props.title} 
+      <li>       	 
       	 <Link 
-      	 	to={"/task/" + this.props.id}>View Details</Link>
-      	 <button onClick={this.props.onDelete} href="">Delete</button>
+      	 	to={"/task/" + this.props.id}>{this.props.title}</Link>      	 
+         <Button bsStyle="danger" onClick={this.props.onDelete}>Delete</Button>
       </li>      
     );
   }

@@ -38,8 +38,7 @@ class TaskDetails extends React.Component {
 
     render() {
         return (      
-        	<div>
-          		<Link to="/">All tasks</Link> 
+        	<div>          		
               <h1>{this.state.task.id}</h1>	 
               <div>
                   {this.state.task.title} <br/>

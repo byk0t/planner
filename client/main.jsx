@@ -1,18 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { hashHistory } from 'react-router';
 
-import { Route, Router, hashHistory } from 'react-router';
-import App from './components/App.jsx';
-import CreateTaskForm from './components/CreateTaskForm.jsx';
-import TaskDetails from './components/TaskDetails.jsx';
+import Root from './components/Root.jsx';
 
-
-ReactDOM.render(
-
-	<Router history={hashHistory}>
-    	<Route path="/" component={App}>
-	    	<Route path="/new-task" component={CreateTaskForm}/>
-	    	<Route path="/task/:id" component={TaskDetails}/>
-    	</Route>
-  	</Router>
-, document.getElementById("main"));
+ReactDOM.render(<Root history={hashHistory}/>, document.getElementById("main"));

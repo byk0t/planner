@@ -39,12 +39,10 @@ class App extends React.Component {
                     </Navbar.Header>
                     <Nav>
                       <NavItem eventKey={1} href="#">About</NavItem>                      
-                      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                        <MenuItem eventKey={3.1}>Action</MenuItem>
-                        <MenuItem eventKey={3.2}>Another action</MenuItem>
-                        <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                      <NavDropdown eventKey={2} title="Actions" id="basic-nav-dropdown">
+                        <MenuItem eventKey={2.1}>New Task</MenuItem>                        
                         <MenuItem divider />
-                        <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                        <MenuItem eventKey={2.2}>Separated link</MenuItem>
                       </NavDropdown>
                     </Nav>
                   </Navbar>
