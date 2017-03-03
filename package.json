@@ -9,8 +9,8 @@
     "build:server": "babel src/server -d server-build",
     "build:client": "webpack --optimize-minimize",
     "build": "npm run clean && npm run build:server && npm run build:client",
-    "start": "node server-build/app.js",
-    "dev-server": "nodemon src/server/app.js --exec  babel-node",
+    "start": "NODE_ENV=production && node server-build/app.js",
+    "dev-server": "NODE_ENV=development && nodemon src/server/app.js --exec  babel-node",
     "webpack-dev": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0"
   },
   "author": "byk0t",
