@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
  
 module.exports = {
- entry: './client/main.jsx',
+ entry: './src/client/main.jsx',
  output: {
-     path: __dirname + '/public/build/',
-     publicPath: "build/",
+     path: __dirname + '/public/client-build/',
+     publicPath: "client-build/",
      filename: 'app.bundle.js'
  },
  module: {
