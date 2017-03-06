@@ -1,27 +1,25 @@
-1. mkdir planner && cd planner
-2. touch .gitignore
-3. npm init 
-4. mkdir {server,client,config,public}
+## TODO manager build on ReactJS, NodeJS, MongoDB
 
-5. npm install --save-dev babel-cli  
-   npm install --save-dev babel-preset-es2015 babel-preset-stage-2  
-   npm install express --save  
-   npm install --save-dev nodemon
+### Install
+1. install node
+2. install npm
+3. install mongo
+4. clone this project
+5. ```cd planner```
+6. ```cp ./src/config/config.json.sample ./src/config/config.json```
+5. setup your configuration in config.json
+6. ```npm install```
 
-6. npm install --save-dev mocha  
-   mkdir test && touch test/app.js  
+### RUN in DEVELOPMENT mode (with hot reload, etc)
+```npm run dev-server && npm run webpack-dev```
 
-7. npm install -S body-parser  
-   sudo npm install webpack -g  
-   npm install react react-dom --save-dev  
-   npm install babel-preset-react --save-dev  
-   npm install babel-core babel-loader webpack --save-dev  
-8. mkdir client/{stores,dispatcher,actions,api,components,constants}  
-   npm install -S keymirror  
-   npm install -S flux  
+### RUN in PRODUCTION mode
 
-9. npm install style-loader css-loader less-loader less --save-dev
-10.npm install --save react-router
-11.npm install bootstrap react-bootstrap --save  
-   npm install --save-dev url-loader  
-   npm install --save-dev file-loader
+```npm run build && npm run start```
+### Deploy on Heroku
+1. fetch heroku branch
+2. ```git checkout heroku```
+3. install heroku console
+4. ```heroku login```
+5. ```git push heroku heroku:master```
+6. ```heroku logs```
